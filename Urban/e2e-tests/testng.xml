@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Urban E2E Suite">
+  <test name="Register and Login Tests">
+    <classes>
+      <class name="com.urban.e2e.tests.RegisterTest"/>
+      <class name="com.urban.e2e.tests.LoginTest"/>
+    </classes>
+  </test>
+</suite>
