@@ -14,6 +14,7 @@ const AdminPanel = () => {
 
   const services = ['spa', 'cleaning', 'painting', 'repairs'];
   const [previewImage, setPreviewImage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
@@ -35,14 +36,28 @@ const AdminPanel = () => {
     };
     console.log('Form submitted:', submissionData);
     try {
-      await fetch("http://localhost:8000/api/service-providers/post", {
+      const response = await fetch("http://localhost:8000/api/service-providers/post", {
         method: 'POST',
         body: JSON.stringify(submissionData),
         headers: {
           "content-type": "application/json"
         }
-      })
-      console.log("Successful")
+      });
+      if (response.ok) {
+        console.log("Successful");
+        setIsSuccess(true);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          mobileNumber: '',
+          service: '',
+          location: '',
+          amountPerHour: '',
+          profilePhoto: '',
+        });
+        setPreviewImage('');
+        setTimeout(() => setIsSuccess(false), 5000);
+      }
     }
     catch (err) {
       console.log(err);
@@ -57,6 +72,12 @@ const AdminPanel = () => {
           <User className="mx-auto h-12 w-12 text-gray-400" />
           <h2 className="mt-4 text-3xl font-bold text-gray-900">Admin Profile</h2>
         </div>
+
+        {isSuccess && (
+          <div id="successMessage" className="mb-6 p-4 text-green-700 bg-green-50 border border-green-200 rounded-md text-center font-medium">
+            Profile registered successfully!
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Profile Photo */}

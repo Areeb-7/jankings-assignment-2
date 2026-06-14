@@ -32,7 +32,7 @@ public class BaseTest {
         frontendUrl = (f == null || f.trim().isEmpty()) ? "http://localhost:5173" : f;
         backendUrl = (b == null || b.trim().isEmpty()) ? "http://localhost:3010" : b;
 
-        WebDriverManager.chromedriver().setup();
+        setupChromeDriver();
         ChromeOptions options = new ChromeOptions();
         String headless = System.getProperty("headless", "false");
         if ("true".equalsIgnoreCase(headless)) {
@@ -46,9 +46,78 @@ public class BaseTest {
         driver = new ChromeDriver(options);
     }
 
+    private void setupChromeDriver() {
+        boolean customDriverSet = false;
+        try {
+            // 1. Get Google Chrome version on macOS
+            String[] command = {"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "--version"};
+            Process process = Runtime.getRuntime().exec(command);
+            java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(process.getInputStream()));
+            String versionLine = reader.readLine();
+            process.waitFor();
+            if (versionLine != null && versionLine.contains("Google Chrome")) {
+                String version = versionLine.replaceAll("[^0-9.]", "").trim();
+                String majorVersion = version.split("\\.")[0];
+                
+                // 2. Search in ~/.cache/selenium/chromedriver
+                String userHome = System.getProperty("user.home");
+                File cacheDir = new File(userHome + "/.cache/selenium/chromedriver");
+                if (cacheDir.exists() && cacheDir.isDirectory()) {
+                    File match = findDriverForVersion(cacheDir, majorVersion);
+                    if (match != null) {
+                        System.setProperty("webdriver.chrome.driver", match.getAbsolutePath());
+                        System.out.println("Set system property webdriver.chrome.driver to: " + match.getAbsolutePath());
+                        customDriverSet = true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Could not resolve local ChromeDriver path dynamically: " + e.getMessage());
+        }
+
+        if (!customDriverSet) {
+            WebDriverManager.chromedriver().setup();
+        }
+    }
+
+    private File findDriverForVersion(File dir, String majorVersion) {
+        File[] files = dir.listFiles();
+        if (files == null) return null;
+        for (File f : files) {
+            if (f.isDirectory()) {
+                if (f.getName().startsWith(majorVersion + ".")) {
+                    File driverBin = findExecutable(f, "chromedriver");
+                    if (driverBin != null) return driverBin;
+                }
+                File driverBin = findDriverForVersion(f, majorVersion);
+                if (driverBin != null) return driverBin;
+            }
+        }
+        return null;
+    }
+
+    private File findExecutable(File dir, String name) {
+        File[] files = dir.listFiles();
+        if (files == null) return null;
+        for (File f : files) {
+            if (f.isFile() && f.getName().equals(name) && f.canExecute()) {
+                return f;
+            } else if (f.isDirectory()) {
+                File res = findExecutable(f, name);
+                if (res != null) return res;
+            }
+        }
+        return null;
+    }
+
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
+            try {
+                Thread.sleep(3000); // Keep screen open for 3 seconds after test completion
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
             driver.quit();
         }
     }
@@ -69,6 +138,26 @@ public class BaseTest {
         } catch (Exception e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public static void typeSlowly(org.openqa.selenium.WebElement element, String text) {
+        element.clear();
+        for (char c : text.toCharArray()) {
+            element.sendKeys(String.valueOf(c));
+            try {
+                Thread.sleep(20); // 20ms typing delay per character
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    public static void delay(long millis) {
+        try {
+            Thread.sleep(Math.max(10, millis / 5)); // Scale down delays for faster execution
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 

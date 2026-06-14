@@ -1,35 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-14T03:47:34 IST" name="Urban E2E Suite" finished-at="2026-06-14T03:47:50 IST" duration-ms="16122">
+  <suite started-at="2026-06-14T18:44:18 IST" name="Urban E2E Suite" finished-at="2026-06-14T18:45:23 IST" duration-ms="65245">
     <groups>
     </groups>
-    <test started-at="2026-06-14T03:47:34 IST" name="Register and Login Tests" finished-at="2026-06-14T03:47:50 IST" duration-ms="16122">
-      <class name="com.urban.e2e.tests.RegisterTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.RegisterTest@2928854b]" started-at="2026-06-14T03:47:34 IST" name="setUp" finished-at="2026-06-14T03:47:41 IST" duration-ms="7105" status="PASS">
+    <test started-at="2026-06-14T18:44:18 IST" name="Register and Login Tests" finished-at="2026-06-14T18:45:23 IST" duration-ms="65245">
+      <class name="com.urban.e2e.tests.ProviderProfileCreationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.ProviderProfileCreationTest@2f112965]" started-at="2026-06-14T18:45:16 IST" name="setUp" finished-at="2026-06-14T18:45:16 IST" duration-ms="633" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testRegister()[pri:0, instance:com.urban.e2e.tests.RegisterTest@2928854b]" started-at="2026-06-14T03:47:41 IST" name="testRegister" finished-at="2026-06-14T03:47:42 IST" duration-ms="837" status="PASS">
+        <test-method signature="testProviderProfileCreation()[pri:0, instance:com.urban.e2e.tests.ProviderProfileCreationTest@2f112965]" started-at="2026-06-14T18:45:16 IST" name="testProviderProfileCreation" finished-at="2026-06-14T18:45:20 IST" duration-ms="3560" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProviderProfileCreation -->
+        <test-method is-config="true" signature="captureFailureArtifacts(org.testng.ITestResult)[pri:0, instance:com.urban.e2e.tests.ProviderProfileCreationTest@2f112965]" started-at="2026-06-14T18:45:20 IST" name="captureFailureArtifacts" finished-at="2026-06-14T18:45:20 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testProviderProfileCreation status=SUCCESS method=ProviderProfileCreationTest.testProviderProfileCreation()[pri:0, instance:com.urban.e2e.tests.ProviderProfileCreationTest@2f112965] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureArtifacts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.ProviderProfileCreationTest@2f112965]" started-at="2026-06-14T18:45:20 IST" name="tearDown" finished-at="2026-06-14T18:45:23 IST" duration-ms="3283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.urban.e2e.tests.ProviderProfileCreationTest -->
+      <class name="com.urban.e2e.tests.ServiceNavigationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.ServiceNavigationTest@6dbb137d]" started-at="2026-06-14T18:44:45 IST" name="setUp" finished-at="2026-06-14T18:44:46 IST" duration-ms="782" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testServiceNavigation()[pri:0, instance:com.urban.e2e.tests.ServiceNavigationTest@6dbb137d]" started-at="2026-06-14T18:44:46 IST" name="testServiceNavigation" finished-at="2026-06-14T18:44:46 IST" duration-ms="783" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testServiceNavigation -->
+        <test-method is-config="true" signature="captureFailureArtifacts(org.testng.ITestResult)[pri:0, instance:com.urban.e2e.tests.ServiceNavigationTest@6dbb137d]" started-at="2026-06-14T18:44:46 IST" name="captureFailureArtifacts" finished-at="2026-06-14T18:44:46 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testServiceNavigation status=SUCCESS method=ServiceNavigationTest.testServiceNavigation()[pri:0, instance:com.urban.e2e.tests.ServiceNavigationTest@6dbb137d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureArtifacts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.ServiceNavigationTest@6dbb137d]" started-at="2026-06-14T18:44:46 IST" name="tearDown" finished-at="2026-06-14T18:44:50 IST" duration-ms="3134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.urban.e2e.tests.ServiceNavigationTest -->
+      <class name="com.urban.e2e.tests.BookingValidationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.BookingValidationTest@43301423]" started-at="2026-06-14T18:45:02 IST" name="setUp" finished-at="2026-06-14T18:45:09 IST" duration-ms="6350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testBookingFormValidation()[pri:0, instance:com.urban.e2e.tests.BookingValidationTest@43301423]" started-at="2026-06-14T18:45:09 IST" name="testBookingFormValidation" finished-at="2026-06-14T18:45:13 IST" duration-ms="3963" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBookingFormValidation -->
+        <test-method is-config="true" signature="captureFailureArtifacts(org.testng.ITestResult)[pri:0, instance:com.urban.e2e.tests.BookingValidationTest@43301423]" started-at="2026-06-14T18:45:13 IST" name="captureFailureArtifacts" finished-at="2026-06-14T18:45:13 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testBookingFormValidation status=SUCCESS method=BookingValidationTest.testBookingFormValidation()[pri:0, instance:com.urban.e2e.tests.BookingValidationTest@43301423] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureArtifacts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.BookingValidationTest@43301423]" started-at="2026-06-14T18:45:13 IST" name="tearDown" finished-at="2026-06-14T18:45:16 IST" duration-ms="3139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.urban.e2e.tests.BookingValidationTest -->
+      <class name="com.urban.e2e.tests.BookingE2ETest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.BookingE2ETest@3c9d0b9d]" started-at="2026-06-14T18:44:50 IST" name="setUp" finished-at="2026-06-14T18:44:50 IST" duration-ms="569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testBookingE2E()[pri:0, instance:com.urban.e2e.tests.BookingE2ETest@3c9d0b9d]" started-at="2026-06-14T18:44:50 IST" name="testBookingE2E" finished-at="2026-06-14T18:44:59 IST" duration-ms="8957" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBookingE2E -->
+        <test-method is-config="true" signature="captureFailureArtifacts(org.testng.ITestResult)[pri:0, instance:com.urban.e2e.tests.BookingE2ETest@3c9d0b9d]" started-at="2026-06-14T18:44:59 IST" name="captureFailureArtifacts" finished-at="2026-06-14T18:44:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testBookingE2E status=SUCCESS method=BookingE2ETest.testBookingE2E()[pri:0, instance:com.urban.e2e.tests.BookingE2ETest@3c9d0b9d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureArtifacts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.BookingE2ETest@3c9d0b9d]" started-at="2026-06-14T18:44:59 IST" name="tearDown" finished-at="2026-06-14T18:45:02 IST" duration-ms="3134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.urban.e2e.tests.BookingE2ETest -->
+      <class name="com.urban.e2e.tests.RegisterTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.RegisterTest@18ce0030]" started-at="2026-06-14T18:44:18 IST" name="setUp" finished-at="2026-06-14T18:44:23 IST" duration-ms="5347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testRegister()[pri:0, instance:com.urban.e2e.tests.RegisterTest@18ce0030]" started-at="2026-06-14T18:44:23 IST" name="testRegister" finished-at="2026-06-14T18:44:27 IST" duration-ms="3467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegister -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.RegisterTest@2928854b]" started-at="2026-06-14T03:47:42 IST" name="tearDown" finished-at="2026-06-14T03:47:42 IST" duration-ms="167" status="PASS">
+        <test-method is-config="true" signature="captureFailureArtifacts(org.testng.ITestResult)[pri:0, instance:com.urban.e2e.tests.RegisterTest@18ce0030]" started-at="2026-06-14T18:44:27 IST" name="captureFailureArtifacts" finished-at="2026-06-14T18:44:27 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testRegister status=SUCCESS method=RegisterTest.testRegister()[pri:0, instance:com.urban.e2e.tests.RegisterTest@18ce0030] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureArtifacts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.RegisterTest@18ce0030]" started-at="2026-06-14T18:44:27 IST" name="tearDown" finished-at="2026-06-14T18:44:30 IST" duration-ms="3165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.urban.e2e.tests.RegisterTest -->
       <class name="com.urban.e2e.tests.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.LoginTest@15b204a1]" started-at="2026-06-14T03:47:42 IST" name="setUp" finished-at="2026-06-14T03:47:43 IST" duration-ms="780" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.urban.e2e.tests.LoginTest@318ba8c8]" started-at="2026-06-14T18:44:30 IST" name="setUp" finished-at="2026-06-14T18:44:34 IST" duration-ms="4330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testLogin()[pri:0, instance:com.urban.e2e.tests.LoginTest@15b204a1]" started-at="2026-06-14T03:47:43 IST" name="testLogin" finished-at="2026-06-14T03:47:50 IST" duration-ms="7096" status="PASS">
+        <test-method signature="testLogin()[pri:0, instance:com.urban.e2e.tests.LoginTest@318ba8c8]" started-at="2026-06-14T18:44:34 IST" name="testLogin" finished-at="2026-06-14T18:44:42 IST" duration-ms="7509" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.LoginTest@15b204a1]" started-at="2026-06-14T03:47:50 IST" name="tearDown" finished-at="2026-06-14T03:47:50 IST" duration-ms="120" status="PASS">
+        <test-method is-config="true" signature="captureFailureArtifacts(org.testng.ITestResult)[pri:0, instance:com.urban.e2e.tests.LoginTest@318ba8c8]" started-at="2026-06-14T18:44:42 IST" name="captureFailureArtifacts" finished-at="2026-06-14T18:44:42 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLogin status=SUCCESS method=LoginTest.testLogin()[pri:0, instance:com.urban.e2e.tests.LoginTest@318ba8c8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureFailureArtifacts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.urban.e2e.tests.LoginTest@318ba8c8]" started-at="2026-06-14T18:44:42 IST" name="tearDown" finished-at="2026-06-14T18:44:45 IST" duration-ms="3111" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

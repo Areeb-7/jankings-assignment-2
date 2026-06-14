@@ -5,6 +5,10 @@
     <classes>
       <class name="com.urban.e2e.tests.RegisterTest"/>
       <class name="com.urban.e2e.tests.LoginTest"/>
+      <class name="com.urban.e2e.tests.ServiceNavigationTest"/>
+      <class name="com.urban.e2e.tests.BookingE2ETest"/>
+      <class name="com.urban.e2e.tests.BookingValidationTest"/>
+      <class name="com.urban.e2e.tests.ProviderProfileCreationTest"/>
     </classes>
   </test>
 </suite>

@@ -30,10 +30,21 @@ public class RegisterPage {
         WebElement emailEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")));
         WebElement passEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("password")));
         WebElement confirmEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("confirmPassword")));
-        nameEl.clear(); nameEl.sendKeys(username);
-        emailEl.clear(); emailEl.sendKeys(email);
-        passEl.clear(); passEl.sendKeys(password);
-        confirmEl.clear(); confirmEl.sendKeys(password);
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']"))).click();
+        
+        com.urban.e2e.BaseTest.typeSlowly(nameEl, username);
+        com.urban.e2e.BaseTest.delay(300);
+        
+        com.urban.e2e.BaseTest.typeSlowly(emailEl, email);
+        com.urban.e2e.BaseTest.delay(300);
+        
+        com.urban.e2e.BaseTest.typeSlowly(passEl, password);
+        com.urban.e2e.BaseTest.delay(300);
+        
+        com.urban.e2e.BaseTest.typeSlowly(confirmEl, password);
+        com.urban.e2e.BaseTest.delay(500);
+        
+        WebElement submitBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
+        submitBtn.click();
+        com.urban.e2e.BaseTest.delay(1000);
     }
 }

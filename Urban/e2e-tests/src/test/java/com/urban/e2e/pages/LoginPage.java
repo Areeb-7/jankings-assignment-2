@@ -28,8 +28,15 @@ public class LoginPage {
     public void login(String email, String password) {
         WebElement emailEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")));
         WebElement passEl = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("password")));
-        emailEl.clear(); emailEl.sendKeys(email);
-        passEl.clear(); passEl.sendKeys(password);
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']"))).click();
+        
+        com.urban.e2e.BaseTest.typeSlowly(emailEl, email);
+        com.urban.e2e.BaseTest.delay(500);
+        
+        com.urban.e2e.BaseTest.typeSlowly(passEl, password);
+        com.urban.e2e.BaseTest.delay(500);
+        
+        WebElement submitBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
+        submitBtn.click();
+        com.urban.e2e.BaseTest.delay(1000);
     }
 }

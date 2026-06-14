@@ -1,2 +1,13 @@
+com/urban/e2e/tests/BookingValidationTest.class
+com/urban/e2e/tests/RegisterTest.class
+com/urban/e2e/BaseTest.class
+com/urban/e2e/pages/BookingFormPage.class
 com/urban/e2e/pages/RegisterPage.class
+com/urban/e2e/tests/LoginTest.class
+com/urban/e2e/tests/BookingE2ETest.class
+com/urban/e2e/pages/ServiceProviderPage.class
 com/urban/e2e/pages/LoginPage.class
+com/urban/e2e/tests/ServiceNavigationTest.class
+com/urban/e2e/pages/HomePage.class
+com/urban/e2e/tests/ProviderProfileCreationTest.class
+com/urban/e2e/pages/AdminPortalPage.class
