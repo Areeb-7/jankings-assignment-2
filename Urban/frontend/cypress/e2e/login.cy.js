@@ -3,7 +3,7 @@ describe('Login page', () => {
     const email = `cylogin+${Date.now()}@example.com`;
     const password = 'Test@1234';
 
-    cy.request('POST', 'http://localhost:3010/api/auth/register', {
+    cy.request('POST', 'http://127.0.0.1:3010/api/auth/register', {
       name: 'Cypress Login User',
       email,
       password,
@@ -21,6 +21,10 @@ describe('Login page', () => {
     cy.wait('@loginRequest')
       .its('response.statusCode')
       .should('eq', 200);
+
+    // Verify redirection to home page
+    cy.url().should('eq', Cypress.config().baseUrl + '/');
+
     cy.window().then((win) => {
       expect(win.localStorage.getItem('token')).to.be.a('string').and.not.be.empty;
     });
