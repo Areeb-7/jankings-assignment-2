@@ -31,3 +31,5 @@ npm run cy:run
 ```
 
 The Cypress specs live in `cypress/e2e/` and cover login and signup flows.
+
+![alt text](<../../Selenium TestNg.png>)
