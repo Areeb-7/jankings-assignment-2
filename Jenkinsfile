@@ -42,7 +42,7 @@ pipeline {
         stage('Run E2E Tests') {
             steps {
                 echo 'Running Selenium E2E Tests...'
-                dir('Urban/e2e-tests') {
+                dir('Urban/Selenium') {
                     sh 'mvn clean test -Dheadless=true -Dfrontend.url=${FRONTEND_URL} -Dbackend.url=${backendUrl} -Dprovider.url=${PROVIDER_URL}'
                 }
             }
@@ -52,7 +52,7 @@ pipeline {
     post {
         always {
             echo 'Archiving test results and artifacts...'
-            dir('Urban/e2e-tests') {
+            dir('Urban/Selenium') {
                 junit '**/target/surefire-reports/*.xml'
                 archiveArtifacts artifacts: '**/target/surefire-reports/failure-artifacts/**', allowEmptyArchive: true
             }
